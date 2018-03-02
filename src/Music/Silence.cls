@@ -1,0 +1,17 @@
+ROUTINE-LEVEL ON ERROR UNDO, THROW.
+USING Music.Beep.
+
+CLASS Music.Silence INHERITS Beep:
+
+  CONSTRUCTOR PUBLIC Silence(pDuration AS INT):
+    SUPER("S", pDuration).
+  END CONSTRUCTOR.
+
+  CONSTRUCTOR PUBLIC Silence(pNote AS CHAR, pDuration AS INT):
+    SUPER(pNote, pDuration).
+  END CONSTRUCTOR.
+
+  METHOD OVERRIDE PUBLIC LOG IsSilence():
+    RETURN TRUE.
+  END METHOD.
+END CLASS.
